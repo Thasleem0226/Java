@@ -1,0 +1,17 @@
+import java.util.*;
+ class Table 
+{
+    public static void main(String args[]) 
+{
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the value of M: ");
+        int M =s.nextInt();
+        System.out.print("Enter the value of N: ");
+        int N = s.nextInt();
+        for (int i = 1; i <= N; i++) 
+{
+            int result = i * M;
+            System.out.println(i + "x" + M + "=" + result);
+        }
+    }
+}
