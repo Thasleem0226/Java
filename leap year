@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class LeapYearChecker 
+{
+    public static void main(String[] args) 
+{
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter starting year: ");
+        int startYear = s.nextInt();
+        
+        System.out.print("Enter ending year: ");
+        int endYear = s.nextInt();
+        
+        if (startYear > endYear)
+{
+            System.out.println("Starting year should be less than or equal to the ending year.");
+            return;
+        }
+        
+        for (int year = startYear; year <= endYear; year++)
+{
+            boolean isLeapYear = isLeapYear(year);
+            if (isLeapYear)
+{
+                System.out.println(year + " is a Leap Year");
+            }
+        }
+    }
+
+    
+    public static boolean isLeapYear(int year)
+{
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) 
+{
+            return true;
+        } 
+else
+{
+            return false;
+        }
+    }
+}
