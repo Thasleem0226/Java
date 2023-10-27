@@ -1,0 +1,50 @@
+import java.util.*;
+
+ class ElementPosition
+ {
+    public static void main(String args[]) 
+    {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements in the array: ");
+        int n =s.nextInt();
+
+        
+        int[] array = new int[n];
+
+        
+        for (int i = 0; i < n; i++)
+        {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            array[i] = scanner.nextInt();
+        }
+
+        System.out.print("Enter the element to find: ");
+        int elementToFind = scanner.nextInt();
+
+        int position = findElementPosition(array, elementToFind);
+
+        if (position != -1)
+        {
+            System.out.println("Element " + elementToFind + " is found at position " + position);
+        } 
+        else 
+        {
+            System.out.println("Element " + elementToFind + " is not found in the array.");
+        }
+
+        
+    }
+
+    public static int findElementPosition(int[] arr, int element)
+    {
+        for (int i = 0; i < arr.length; i++) 
+        {
+            if (arr[i] == element) 
+            {
+                return i; 
+            }
+        }
+        return -1; 
+    }
+}
