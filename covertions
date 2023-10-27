@@ -1,0 +1,33 @@
+import java.util.*;
+
+ class Decimal
+ {
+    public static void main(String args[])
+ {
+        Scanner s = new Scanner(System.in);
+int remainder,binaryNumber=0,octalNumber=0;
+
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = s.nextInt();
+        int originalDecimal = decimalNumber;
+
+        
+        while (decimalNumber > 0)
+{
+     remainder = decimalNumber % 2;
+    binaryNumber = remainder + binaryNumber;
+    decimalNumber = decimalNumber / 2;
+}
+        
+        decimalNumber = originalDecimal;
+        while (decimalNumber > 0)
+{
+     remainder = decimalNumber % 8;
+    octalNumber = remainder + octalNumber;
+    decimalNumber = decimalNumber / 8;
+}
+
+        System.out.println("Binary Number = " + binaryNumber);
+        System.out.println("Octal = " + octalNumber);
+    }
+}
