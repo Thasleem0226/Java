@@ -1,0 +1,18 @@
+import java.util.*;
+class Fact
+{
+public static void main(String args[])
+{
+Scanner s=new Scanner(System.in);
+int n,fact=1,i=1;
+System.out.println("enter the n value");
+n=s.newInt();
+while(i<=n)
+{
+fact=fact*i;
+i++;
+}
+System.out.println("output="+fact);
+}
+}
+
