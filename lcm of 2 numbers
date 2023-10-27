@@ -1,0 +1,28 @@
+import java.util.*;
+
+ class LCMDemo 
+{
+    public static void main(String args[])
+{
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int number1 = s.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int number2 = s.nextInt();
+
+        int lcm = calculateLCM(number1, number2);
+
+        System.out.println("LCM of " + number1 + " and " + number2 + " is " + lcm);
+
+        
+    }
+
+    public static int calculateLCM(int a, int b) 
+{
+        return (a * b) / calculateGCD(a, b);
+    }
+
+    
+}
