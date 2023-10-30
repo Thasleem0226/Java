@@ -1,0 +1,37 @@
+import java.util.*;
+class Timple
+{
+int p,r,t;
+double si;
+void get(int T,int H,int A)
+{
+p=T;
+t=H;
+r=A;
+}
+void calculate()
+{
+si=(p*t*r)/100;
+}
+void display()
+{
+System.out.println("output="+si);
+}
+public static void main(String args[])
+{
+Timple Obj=new Timple();
+Scanner s=new Scanner(System.in);
+int a;
+int b;
+int c;
+System.out.println("enter the a value:");
+a=s.nextInt();
+System.out.println("enter the b value:");
+b=s.nextInt();
+System.out.println("enter the c value:");
+c=s.nextInt();
+Obj.get(a,b,c);
+Obj.calculate();
+Obj.display();
+}
+}
