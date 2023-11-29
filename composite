@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class CompositeNumbers
+{
+    public static void main(String[] args)
+{
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the value of A: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Enter the value of B: ");
+        int b = scanner.nextInt();
+
+        System.out.println("Composite numbers between " + a + " and " + b + ":");
+        printCompositeNumbers(a, b);
+    }
+
+    public static void printCompositeNumbers(int start, int end)
+{
+        for (int num = start; num <= end; num++)
+          {
+            if (isComposite(num))
+            {
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println(); 
+    }
+
+    public static boolean isComposite(int number)
+{
+        if (number < 2) 
+        {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i++)
+          {
+            if (number % i == 0)
+            {
+                return true;
+            }
+        }
+
+        return false; 
+    }
+}
