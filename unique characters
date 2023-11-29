@@ -1,0 +1,39 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class UniqueCharacters 
+{
+    public static void main(String[] args) 
+{
+        String inputString = "abcb";
+
+        System.out.println("Input string: " + inputString);
+        System.out.println("Unique characters: " + getUniqueCharacters(inputString));
+    }
+
+    public static Set<Character> getUniqueCharacters(String str) 
+{
+        Set<Character> uniqueCharacters = new HashSet<>();
+        Set<Character> repeatedCharacters = new HashSet<>();
+
+        for (char ch : str.toCharArray())
+{
+            if (!repeatedCharacters.contains(ch))
+{
+                if (!uniqueCharacters.contains(ch)) 
+{
+                    uniqueCharacters.add(ch);
+                } 
+else 
+{
+                    uniqueCharacters.remove(ch);
+                    repeatedCharacters.add(ch);
+                }
+            }
+        }
+
+        return uniqueCharacters;
+    }
+}
