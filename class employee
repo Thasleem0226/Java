@@ -1,0 +1,57 @@
+import java.util.*;
+class Employee
+{
+    private String name;
+    private double basicSalary;
+
+    public Employee(String name, double basicSalary)
+{
+        this.name = name;
+        this.basicSalary = basicSalary;
+    }
+
+    public double getSalary() 
+{
+        return basicSalary;
+    }
+
+    
+}
+
+class Manager extends Employee 
+{
+    private double travelAllowance;
+    private double houseRentAllowance;
+
+    public Manager(String name, double basicSalary, double travelAllowance, double houseRentAllowance)
+{
+        super(name, basicSalary);
+        this.travelAllowance = travelAllowance;
+        this.houseRentAllowance = houseRentAllowance;
+    }
+
+    
+    public double getSalary()
+{
+        
+        return super.getSalary() + travelAllowance + houseRentAllowance;
+    }
+
+    
+}
+
+public class EmployeeManagerTest
+{
+    public static void main(String[] args) 
+{
+        
+        Employee employee = new Employee("John Doe", 50000);
+
+        
+        Manager manager = new Manager("Jane Smith", 60000, 5000, 7000);
+
+        
+        System.out.println("Employee Salary: $" + employee.getSalary());
+        System.out.println("Manager Salary: $" + manager.getSalary());
+    }
+}
